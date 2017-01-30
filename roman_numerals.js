@@ -1,9 +1,31 @@
 function to_roman_old (n) {
-  // your code here
+  var result = "";
+  var romans = ["M", "D", "CD", "C", "L", "XL", "X", "V", "I"];
+  var nums = [1000, 500, 400, 100, 50, 40, 10, 5, 1];
+
+  for ( var i=0; i<nums.length; i++) {
+    while (n >= nums[i]) {
+      result+=romans[i];
+      n = n-nums[i];
+    }
+  }
+
+  return result;
 }
 
 function to_roman (n) {
-  // your implementation code here
+  var result = "";
+  var romans = ["M", "D", "CD", "C", "L", "XL", "X", "IX", "V", "I"];
+  var nums = [1000, 500, 400, 100, 50, 40, 10, 9, 5, 1];
+
+  for ( var i=0; i<nums.length; i++) {
+    while (n >= nums[i]) {
+      result+=romans[i];
+      n = n-nums[i];
+    }
+  }
+
+  return result;
 }
 
 // Drive code
