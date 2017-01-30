@@ -76,11 +76,15 @@ function to_roman (n) {
       a += 'X';
       n -= 10;
     }
+    else if (n / 9 === 1) {
+      a += 'IX';
+      n -= 9;
+    }
     else if (n / 5 > 1) {
       a += 'V';
       n -= 5;
     }
-    else if (n / 4 >= 1) {
+    else if (n / 4 === 1) {
       a += 'IV';
       n -= 4;
     }
