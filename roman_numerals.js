@@ -1,9 +1,30 @@
-function to_roman_old (n) {
-  // your code here
+function cekRoman(newroman,romanArabic,n) {
+  for (var i = 0; i < romanArabic.arabic.length; i++) {
+    while (n>=romanArabic.arabic[i]) {
+        newroman = newroman+romanArabic.roman[i];
+        n = n-romanArabic.arabic[i];
+    }
+}
+return newroman;
 }
 
+function to_roman_old (n) {
+  var numberOldRoman ={
+              "roman":['M','CM','D','CD','C','XC','L','XL','X','V','I'],
+              "arabic":[1000,900,500,400,100,90,50,40,10,5,1]
+            }
+  var newRoman='';
+  newRoman=cekRoman(newRoman,numberOldRoman,n);
+return newRoman;
+}
 function to_roman (n) {
-  // your implementation code here
+  var numberNewRoman ={
+                "roman":['M','CM','D','CD','C','XC','L','XL','X','IX','V','IV','I'],
+                "arabic":[1000,900,500,400,100,90,50,40,10,9,5,4,1]
+              }
+   var newRoman='';
+   newRoman=cekRoman(newRoman,numberNewRoman,n);
+return newRoman;
 }
 
 // Drive code
