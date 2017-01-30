@@ -1,46 +1,53 @@
-function to_roman_old (num) {
-  let romanMap   = ["I","V","X","XL","L","C","CD","D","M"];
-  let numeralMap = [1,5,10,40,50,100,400,500,1000];
-  let result     = "";
 
-  for(let i = numeralMap.length; i >= 0; i--) {
-    while (num >= numeralMap[i]) {
-      result += romanMap[i];
-      num    -= numeralMap[i];
+function to_roman_old(n) {
+  // your code here
+  var result  = "";
+  var numeral = ["M","CM","D","CD","C","XC","L","XL","X","V","I"]
+  var arabic  = [1000,900,500,400,100,90,50,40,10,5,1];
+
+  // Looping setiap element yang berada dalam array
+  for(var i = 0; i < arabic.length; i++) {
+    while(n >= arabic[i]) {
+      // add the matching roman number to our result string
+      result += numeral[i];
+      // subtract the decimal value of the roman number from our number
+      n -= arabic[i];
     }
   }
-  return result
+
+  return result;
 }
 
-function to_roman (num) {
-  let romanMap   = ["I","IV","V","IX","X","XL","L","C","CD","D","CM","M"];
-  let numeralMap = [1,4,5,9,10,40,50,100,400,500,900,1000];
-  let result     = "";
+function to_roman(n) {
+  // your implementation code here
+  var lookup = {
+    M:1000,CM:900,D:500,CD:400,C:100,XC:90,L:50,XL:40,X:10,IX:9,V:5,IV:4,I:1
+  }, roman = '', i;
 
-  for (var i = numeralMap.length; i >= 0; i--) {
-    while (num >= numeralMap[i]) {
-      result += romanMap[i]
-      num    -= numeralMap[i]
+  for(i in lookup){
+    while(n >= lookup[i] ) {
+      roman += i;
+      n -= lookup[i];
     }
   }
-  return result
+  return roman;
 }
 
 // Drive code
-console.log('My totally sweet testing script\n')
-console.log('input | expected | actual')
-console.log('———|—————|———')
-console.log('4     | IIII     | ', to_roman_old(4))
-console.log('9     | VIIII    | ', to_roman_old(9))
-console.log('13    | XIII     | ', to_roman_old(13))
-console.log('1453  | MCDLIII  | ', to_roman_old(1453))
-console.log('1646  | MDCXLVI  | ', to_roman_old(1646))
+console.log("My totally sweet testing script\n");
+console.log("input | expected | actual");
+console.log("———|—————|———");
+console.log("4     | IIII     | ", to_roman_old(4));
+console.log("9     | VIIII    | ", to_roman_old(9));
+console.log("13    | XIII     | ", to_roman_old(13));
+console.log("1453  | MCDLIII  | ", to_roman_old(1453));
+console.log("1646  | MDCXLVI  | ", to_roman_old(1646));
 
-console.log('My totally sweet testing script for new roman\n')
-console.log('input | expected | actual')
-console.log('———|—————|———')
-console.log('4     | IV       | ', to_roman(4))
-console.log('9     | IX       | ', to_roman(9))
-console.log('13    | XIII     | ', to_roman(13))
-console.log('1453  | MCDLIII  | ', to_roman(1453))
-console.log('1646  | MDCXLVI  | ', to_roman(1646))
+console.log("My totally sweet testing script for new roman\n");
+console.log("input | expected | actual");
+console.log("———|—————|———");
+console.log("4     | IV       | ", to_roman(4));
+console.log("9     | IX       | ", to_roman(9));
+console.log("13    | XIII     | ", to_roman(13));
+console.log("1453  | MCDLIII  | ", to_roman(1453));
+console.log("1646  | MDCXLVI  | ", to_roman(1646));
