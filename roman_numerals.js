@@ -1,43 +1,14 @@
 function to_roman_old (n) {
   // your code here
+  let nums = [1000, 900, 500, 400, 100, 50, 40, 10, 5, 1];
+  let romans = ["M", "CM", "D", "CD", "C", "L", "XL", "X", "V", "I"];
   let a = '';
-  while(n > 0) {
-    if(n / 1000 > 1) {
-      a += 'M';
-      n -= 1000;
-    }
-    else if (n / 500 > 1) {
-      if (n >= 500)
-      a += 'D';
-      n -= 500;
-    }
-    else if (n / 400 > 1) {
-      a += 'CD';
-      n -= 400;
-    }
-    else if (n / 100 > 1) {
-      a += 'C';
-      n -= 100;
-    }
-    else if (n / 50 > 1) {
-      a += 'L';
-      n -= 50;
-    }
-    else if (n / 40 > 1) {
-      a += 'XL';
-      n -= 40;
-    }
-    else if (n / 10 > 1) {
-      a += 'X';
-      n -= 10;
-    }
-    else if (n / 5 > 1) {
-      a += 'V';
-      n -= 5;
-    }
-    else if (n >= 1) {
-      a += 'I';
-      n -= 1;
+  while (n !== 0) {
+    for(i=0; i<nums.length; i++) {
+      if(n / nums[i] >= 1) {
+        a += romans[i];
+        n -= nums[i];
+      }
     }
   }
   return a
@@ -45,55 +16,18 @@ function to_roman_old (n) {
 
 function to_roman (n) {
   // your implementation code here
+  let nums = [1000, 900, 500, 400, 100, 50, 40, 10, 9, 5, 4, 1];
+  let romans = ["M", "CM", "D", "CD", "C", "L", "XL", "X", "IX", "V", "IV", "I"];
   let a = '';
-  while(n > 0) {
-    if(n / 1000 > 1) {
-      a += 'M';
-      n -= 1000;
-    }
-    else if (n / 500 > 1) {
-      if (n >= 500)
-      a += 'D';
-      n -= 500;
-    }
-    else if (n / 400 > 1) {
-      a += 'CD';
-      n -= 400;
-    }
-    else if (n / 100 > 1) {
-      a += 'C';
-      n -= 100;
-    }
-    else if (n / 50 > 1) {
-      a += 'L';
-      n -= 50;
-    }
-    else if (n / 40 > 1) {
-      a += 'XL';
-      n -= 40;
-    }
-    else if (n / 10 > 1) {
-      a += 'X';
-      n -= 10;
-    }
-    else if (n / 9 === 1) {
-      a += 'IX';
-      n -= 9;
-    }
-    else if (n / 5 > 1) {
-      a += 'V';
-      n -= 5;
-    }
-    else if (n / 4 === 1) {
-      a += 'IV';
-      n -= 4;
-    }
-    else if (n >= 1) {
-      a += 'I';
-      n -= 1;
+  while (n !== 0) {
+    for(i=0; i<nums.length; i++) {
+      if(n / nums[i] >= 1) {
+        a += romans[i];
+        n -= nums[i];
+      }
     }
   }
-  return a
+  return a;
 }
 
 
