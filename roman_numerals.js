@@ -1,29 +1,7 @@
 function to_roman_old (num) {
-  let romanMap   = ["I","V","X","XL","L","C","CD","D","M"];
-  let numeralMap = [1,5,10,40,50,100,400,500,1000];
-  let result     = "";
-
-  for(let i = numeralMap.length; i >= 0; i--) {
-    while (num >= numeralMap[i]) {
-      result += romanMap[i];
-      num    -= numeralMap[i];
-    }
-  }
-  return result
 }
 
 function to_roman (num) {
-  let romanMap   = ["I","IV","V","IX","X","XL","L","C","CD","D","CM","M"];
-  let numeralMap = [1,4,5,9,10,40,50,100,400,500,900,1000];
-  let result     = "";
-
-  for (var i = numeralMap.length; i >= 0; i--) {
-    while (num >= numeralMap[i]) {
-      result += romanMap[i]
-      num    -= numeralMap[i]
-    }
-  }
-  return result
 }
 
 // Drive code
